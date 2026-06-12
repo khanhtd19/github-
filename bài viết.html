@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="logo/logo trường.jpg" type="image/x-icon">
+<title>Bài viết</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+}
+
+.hero{
+    text-align:center;
+    padding:60px 20px 20px;
+}
+
+.hero h1{
+    font-size:2.8rem;
+    font-weight:800;
+    background: linear-gradient(135deg,#2563eb,#7c3aed,#22c55e);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation: floatText 1s ease;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:1.2rem;
+    color:#666;
+    animation: fadeUp 0.6s ease;
+}
+
+@keyframes floatText{
+    from{opacity:0; transform:translateY(-20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:#2563eb;
+}
+
+.logo img{
+    height:45px;
+}
+
+.menu{
+    display:flex;
+    gap:20px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.menu a:hover{
+    color:#ffd700;
+}
+
+/* GRID */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    max-width:1300px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 768px) {
+
+    .navbar{
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .navbar .menu{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section{
+        padding: 20px;
+    }
+
+    .cards{
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden; /* bỏ scroll ngang */
+    }
+
+    .card{
+        width: 90%;   /* full mobile */
+        max-width: 350px;
+    }
+
+    .card img{
+        height: 160px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+}
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.card-body h3{
+    margin-bottom:10px;
+}
+
+.card-body p{
+    color:#666;
+    line-height:1.5;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#2563eb,#4f46e5,#7c3aed);
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+    border:none;
+}
+
+/* MODAL */
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-content{
+    background:white;
+    width:90%;
+    max-width:700px;
+    padding:25px;
+    border-radius:15px;
+    animation:zoom .2s ease;
+    max-height:80vh;
+    overflow-y:auto;
+}
+
+@keyframes zoom{
+    from{transform:scale(0.7);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+
+/* PAGE FADE IN */
+body{
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+}
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 25px;
+    background:rgba(37,99,235,0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+body.fade-out{
+    opacity:0;
+    transition:0.3s ease;
+}
+.close{
+    float:right;
+    cursor:pointer;
+    font-size:20px;
+}
+
+/* navbar chỉnh lại layout */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 25px;
+    background:#2563eb;
+    gap:20px;
+}
+
+/* logo giữ nguyên */
+.logo img{
+    height:45px;
+}
+
+/* menu */
+.menu{
+    display:flex;
+    gap:20px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.menu a:hover{
+    color:#ffd700;
+}
+/* hero nằm giữa navbar */
+.hero{
+    text-align:center;
+    padding:50px 20px 10px;
+}
+
+.hero h1{
+    font-size:2.6rem;
+    font-weight:800;
+    background: linear-gradient(135deg,#0844c7,#380394,#07b346);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:1.2rem;
+    color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <img src="logo/logo trường.jpg">
+    </div>
+    
+    <div class="hero">
+    <h1>Bài viết nổi bật</h1>
+    <p>Học hỏi và nâng cao kỹ năng lập trình</p>
+</div>
+
+    <div class="menu">
+        <a href="trang chu.html">Trang chủ</a>
+        <a href="khóa học.html">Khóa học</a>
+        <a href="bài viết.html">Bài viết</a>
+        <a href="liên hệ.html">Liên Hệ</a>
+    </div>
+</div>
+
+<div class="cards">
+
+    <div class="card">
+        <img src="logo/html&css.jpg">
+        <div class="card-body">
+            <h3>HTML & CSS</h3>
+            <p>Học nền tảng web</p>
+            <button class="btn" onclick="openModal(1)">Đọc thêm</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="logo/java.png">
+        <div class="card-body">
+            <h3>JavaScript ES6</h3>
+            <p>JS hiện đại</p>
+            <button class="btn" onclick="openModal(2)">Đọc thêm</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="logo/react js.jpg">
+        <div class="card-body">
+            <h3>ReactJS</h3>
+            <p>UI Framework</p>
+            <button class="btn" onclick="openModal(3)">Đọc thêm</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="logo/python.jpg">
+        <div class="card-body">
+            <h3>Python</h3>
+            <p>Lập trình cơ bản</p>
+            <button class="btn" onclick="openModal(4)">Đọc thêm</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="logo/html&css.jpg">
+        <div class="card-body">
+            <h3>Responsive Web</h3>
+            <p>Web mọi thiết bị</p>
+            <button class="btn" onclick="openModal(5)">Đọc thêm</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="logo/java.png">
+        <div class="card-body">
+            <h3>DOM JS</h3>
+            <p>Thao tác HTML</p>
+            <button class="btn" onclick="openModal(6)">Đọc thêm</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="logo/react js.jpg">
+        <div class="card-body">
+            <h3>React Hooks</h3>
+            <p>useState, useEffect</p>
+            <button class="btn" onclick="openModal(7)">Đọc thêm</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="logo/python.jpg">
+        <div class="card-body">
+            <h3>OOP Python</h3>
+            <p>Hướng đối tượng</p>
+            <button class="btn" onclick="openModal(8)">Đọc thêm</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">✖</span>
+        <h2 id="title"></h2>
+        <p id="content"></p>
+    </div>
+</div>
+
+<script>
+const data = {
+1: {
+title: "HTML & CSS",
+content: `HTML & CSS là nền tảng quan trọng nhất của web.
+
+HTML dùng để tạo cấu trúc: tiêu đề, đoạn văn, hình ảnh, bảng, form...
+CSS dùng để thiết kế giao diện: màu sắc, bố cục, hiệu ứng.
+
+Bạn sẽ học:
+- Cách tạo website đầu tiên
+- Flexbox & Grid
+- Responsive design
+- Animation cơ bản
+
+Sau bài này bạn có thể tự làm landing page hoàn chỉnh.`
+},
+
+2: {
+title: "JavaScript ES6",
+content: `JavaScript ES6 giúp lập trình web mạnh hơn rất nhiều.
+
+Bạn sẽ học:
+- let / const
+- arrow function
+- template string
+- destructuring
+- promise & async/await
+
+JS giúp website:
+- tương tác người dùng
+- xử lý dữ liệu
+- tạo ứng dụng web động`
+},
+
+3: {
+title: "ReactJS",
+content: `ReactJS là thư viện UI phổ biến nhất hiện nay.
+
+Bạn sẽ học:
+- component
+- props
+- state
+- hooks
+- routing
+
+React giúp:
+- xây SPA nhanh
+- tái sử dụng code
+- tối ưu hiệu năng`
+},
+
+4: {
+title: "Python",
+content: `Python là ngôn ngữ dễ học nhất.
+
+Ứng dụng:
+- AI
+- Data Science
+- Web backend
+- Automation
+
+Bạn sẽ học:
+- biến, vòng lặp
+- hàm
+- file handling
+- OOP`
+},
+
+5: {
+title: "Responsive Web",
+content: `Responsive giúp website hiển thị đẹp trên mọi thiết bị.
+
+Kỹ thuật:
+- media query
+- flexbox
+- grid
+- mobile-first design`
+},
+
+6: {
+title: "DOM JavaScript",
+content: `DOM giúp JS thao tác HTML:
+
+- thêm element
+- xóa element
+- sửa nội dung
+- event click, input`
+},
+
+7: {
+title: "React Hooks",
+content: `Hooks giúp React dễ dùng hơn:
+
+- useState
+- useEffect
+- useRef
+- custom hooks`
+},
+
+8: {
+title: "OOP Python",
+content: `OOP giúp code có cấu trúc:
+
+- class / object
+- inheritance
+- encapsulation
+- polymorphism`
+}
+};
+
+function openModal(id){
+    document.getElementById("modal").style.display = "flex";
+    document.getElementById("title").innerText = data[id].title;
+    document.getElementById("content").innerText = data[id].content;
+}
+
+function closeModal(){
+    document.getElementById("modal").style.display = "none";
+}
+
+window.onclick = function(e){
+    if(e.target.id === "modal"){
+        closeModal();
+    }
+}
+</script>
+<script>
+document.querySelectorAll("a").forEach(link=>{
+    link.addEventListener("click", function(e){
+        const href = this.getAttribute("href");
+
+        // chỉ áp dụng cho link nội bộ
+        if(href && !href.startsWith("http")){
+            e.preventDefault();
+            document.body.classList.add("fade-out");
+
+            setTimeout(()=>{
+                window.location.href = href;
+            }, 250);
+        }
+    });
+});
+</script>
+</body>
+</html>

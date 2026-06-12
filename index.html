@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="logo/logo trường.jpg" type="image/x-icon">
+<title>Navbar</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #2563eb;
+}
+
+@media (max-width: 768px){
+
+    .navbar{
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .navbar .menu{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+
+.navbar .menu a:hover {
+    color: #ffeb3b; /* đổi màu chữ khi hover */
+}
+.cards{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* nếu màn nhỏ thì kéo ngang */
+}
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 768px) {
+
+    .navbar{
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .navbar .menu{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section{
+        padding: 20px;
+    }
+
+    .cards{
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden; /* bỏ scroll ngang */
+    }
+
+    .card{
+        width: 90%;   /* full mobile */
+        max-width: 350px;
+    }
+
+    .card img{
+        height: 160px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <img src="logo/logo trường.jpg" alt="Logo" style="height:40px;">
+    </div>
+    <div class="menu">
+        <a href="trang chu.html">Trang chủ</a>
+        <a href="khóa học.html">Khóa học</a>
+        <a href="bài viết.html">Bài viết</a>
+        <a href="liên hệ.html">Liên hệ</a>
+    </div>
+</nav>
+<div class="section">
+    <h2>Bài viết nổi bật</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="logo/html&css.jpg" alt="HTML & CSS">
+            <div class="card-body">
+                <h3>HTML & CSS Tips</h3>
+                <p>Nguyễn Văn A | 5 phút đọc</p>
+                <a href="bài viết.html" class="btn">Xem bài viết</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="logo/java.png" alt="JavaScript">
+            <div class="card-body">
+                <h3>JavaScript ES6</h3>
+                <p>Trần Thị B | 8 phút đọc</p>
+                <a href="bài viết.html" class="btn">Xem bài viết</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="logo/react js.jpg" alt="React">
+            <div class="card-body">
+                <h3>ReactJS cơ bản</h3>
+                <p>Lê Văn C | 10 phút đọc</p>
+                <a href="bài viết.html" class="btn">Xem bài viết</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
