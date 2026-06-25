@@ -32,4 +32,10 @@ Trang web giới thiệu các khóa học lập trình và các bài viết nổ
 4. Thông tin đăng ký lưu LocalStorage, hiển thị toast.  
 5. Xem các bài viết nổi bật trong phần **Bài viết nổi bật**.
 
-## Cấu trúc thư mục gợi ý
+## Demo dự án
+
+🌐 Demo trực tuyến: https://khanhtd19.github.io/github-/
+
+## ảnh giao diện
+
+🏠 Trang chủ: https://khanhtd19.github.io/github-/trang%20chu.html
